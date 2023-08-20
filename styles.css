@@ -48,10 +48,17 @@ nav a:hover {
     animation: fadeIn 1s forwards 1s; /* Start after 1s, duration 1s */
 }
 
+#applications {
+    background-color: #000;   /* Pure black background */
+    font-size: 16px;
+    color: white;
+}
+
 #contact {
     padding: 20px;  /* Padding to prevent text from sticking to the edge */
     font-size: 16px;
     color: white;
+    background-color: #000;
 }
 
 .fade-in {
