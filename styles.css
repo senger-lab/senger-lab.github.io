@@ -1,5 +1,9 @@
-.tab-content {
+.content {
     display: none;
+}
+
+.content:target {
+    display: block;
 }
 
 body {
@@ -39,9 +43,6 @@ nav a:hover {
     color: white;
 }
 
-#home .tab-content {
-    display: block;
-}
 
 #title {
     opacity: 0;
