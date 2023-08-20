@@ -20,11 +20,6 @@ nav a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
-    border: 1px solid white;   /* This line adds a white border */
-
-    /* Optional: You can add hover effect for a better UX */
-    background-color: black;   /* Ensure the background remains consistent */
-    transition: background-color 0.3s, color 0.3s;   /* Adding transition for color too */
 }
 
 nav a:hover {
