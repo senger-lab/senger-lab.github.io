@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+#home {
+    background-image: url('path_to_your_image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s; /* Start after 1s, duration 1s */
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards 3s; /* Start after 3s, duration 1s */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
