@@ -2,10 +2,6 @@
     display: none;
 }
 
-.content:target {
-    display: block;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;

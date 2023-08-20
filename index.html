@@ -11,9 +11,9 @@
 
 <body>
     <nav>
-        <a href="#home">HOME</a>
-        <a href="#applications">APPLICATIONS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#" onclick="showTab('home')">Home</a>
+        <a href="#" onclick="showTab('applications')">Applications</a>
+        <a href="#" onclick="showTab('contact')">Contact</a>
     </nav>
     <div id="home" class="content">
         <h1 id="title">SENGER LAB</h1>
@@ -27,10 +27,24 @@
     <div id="contact" class="content">
         For issues, contact ...   
     </div>
-
-    if (location.hash === "") {
-        location.hash = "#home";
-    }
+    <script>
+        function showTab(tabId) {
+            // Get all content sections
+            const contents = document.querySelectorAll('.content');
+    
+            // Hide all sections
+            contents.forEach(content => content.style.display = 'none');
+    
+            // Display the clicked section
+            document.getElementById(tabId).style.display = 'block';
+        }
+    
+        // Call the function on page load to show Home tab by default
+        window.onload = function() {
+            showTab('home');
+        }
+    </script>
+    
 </body>
 
 </html>
