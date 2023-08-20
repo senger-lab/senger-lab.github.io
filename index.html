@@ -16,16 +16,42 @@
         <a href="#contact">CONTACT</a>
     </nav>
     <div id="home" class="content">
-        <h1 id="title">SENGER LAB</h1>
-        <p class="fade-in">Lady Davis Institute for Medical Research at the Jewish General Hospital, McGill University</p>
-        <p class="fade-in">Arnie Charbonneau Cancer Institute, University of Calgary</p>
+        <div class="tab-content"></div>
+            <h1 id="title">SENGER LAB</h1>
+            <p class="fade-in">Lady Davis Institute for Medical Research at the Jewish General Hospital, McGill University</p>
+            <p class="fade-in">Arnie Charbonneau Cancer Institute, University of Calgary</p>
+        </div>
     </div>
     <div id="applications" class="content">
+        <div class="tab-content"></div>
         Testing ...
+        </div>
     </div>
     <div id="contact" class="content">
+        <div class="tab-content"></div>
         For issues, contact ...
+        </div>
     </div>
+    <script>
+        // Get all tab links
+        const tabs = document.querySelectorAll('nav a');
+    
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                // Hide content of all tabs
+                const allContent = document.querySelectorAll('.tab-content');
+                allContent.forEach(content => content.style.display = 'none');
+                
+                // Show content of the clicked tab
+                const targetContentId = this.getAttribute('href');
+                const targetContent = document.querySelector(targetContentId + ' .tab-content');
+                targetContent.style.display = 'block';
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
