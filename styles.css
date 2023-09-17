@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 #home {
-    background: url('home_background.png') no-repeat center center fixed;
+    background: url('://home_background.png') no-repeat center center fixed;
     background-size: cover;
 }
 
