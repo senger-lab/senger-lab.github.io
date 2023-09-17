@@ -4,67 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Website</title>
+    <title>Test Lab</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
 </head>
 
 <body>
     <nav>
-        <a href="#" onclick="showTab('home')">Home</a>
-        <a href="#" onclick="showTab('applications')">Applications</a>
-        <a href="#" onclick="showTab('contact')">Contact</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#applications">Applications</a>
     </nav>
-    <div id="home" class="content">
-        <h1 id="title">SENGER\nLAB</h1>
+
+    <section id="home" class="tab-content active">
+        <h1 id="title">SENGER LAB</h1>
         <p class="fade-in">Lady Davis Institute for Medical Research at the Jewish General Hospital, McGill University</p>
         <p class="fade-in">Arnie Charbonneau Cancer Institute, University of Calgary</p>
-        <div id="hitcounter">
-            Total Visitors: <span id="visitorCount">Loading...</span>
-        </div>
-        
-    </div>
-    <div id="applications" class="content">
+    </section>
 
-        <!-- First Paragraph -->
-        <div class="app-section">
+    <section id="applications" class="tab-content">
+        <div class="app">
             <h2>TFRI GBM Data Viewer</h2>
             <p>Data accessible from Shen et al., 2019</p>
             <a href="https://example1.com" target="_blank" class="app-button">Visit Site</a>
         </div>
-    
         <!-- Second Paragraph -->
         <div class="app-section">
-            <h2>SomaScan Data Viewer</h2>
-            <p>SomaScan profiling of TIF from U87 xenografts</p>
+            <h2> Data Viewer</h2>
+            <p>Data from Experiment Y is accessible here:</p>
             <a href="https://example2.com" target="_blank" class="app-button">Visit Site</a>
         </div>
-        
-        <!-- ... Repeat for remaining paragraphs ... -->
-    
-    </div>
-    
-    <div id="contact" class="content">
-        For issues, contact ...   
-    </div>
-    <script>
-        function showTab(tabId) {
-            // Get all content sections
-            const contents = document.querySelectorAll('.content');
-    
-            // Hide all sections
-            contents.forEach(content => content.style.display = 'none');
-    
-            // Display the clicked section
-            document.getElementById(tabId).style.display = 'block';
-        }
-    
-        // Call the function on page load to show Home tab by default
-        window.onload = function() {
-            showTab('home');
-        }
-    </script>
-    
+        <!-- Add more app divs here if you have more applications -->
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
