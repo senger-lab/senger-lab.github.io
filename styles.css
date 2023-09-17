@@ -8,21 +8,21 @@ body, h1, h2, p, a {
 nav {
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
+    background-color: black;
+    padding: 20px 0; /* Increased padding to make tabs bigger */
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 30px; /* Increased margin between tabs */
     text-decoration: none;
-    color: white;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    color: white; /* Made text color white */
+    font-size: 1.5em; /* Increased font size */
+    padding: 10px 20px; /* Added padding to make tabs bigger */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
 }
 
-nav a.active,
 nav a:hover {
-    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1); /* Added a subtle hover effect */
 }
 
 .tab-content {
@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 #home {
-    background: url('://home_background.png') no-repeat center center fixed;
+    background: url('../home_background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -50,9 +50,24 @@ nav a:hover {
     animation: fadeIn 2s forwards;
 }
 
+#home {
+    background: url('../home_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* left-justified, but centered vertically */
+}
+
+#home h1 {
+    font-size: 5em; /* increased size for the title */
+    margin-bottom: 20px; /* spacing between title and paragraphs */
+    animation: fadeIn 2s forwards;
+}
+
 #home p {
-    font-size: 1.5em;
-    opacity: 0;
+    font-size: 2em; /* increased size for the paragraphs */
+    margin-bottom: 10px; /* spacing between paragraphs */
     animation: fadeIn 2s 1s forwards;
 }
 
