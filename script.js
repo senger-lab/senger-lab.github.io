@@ -1,12 +1,10 @@
 function showTab(tabId) {
-    // Get all tab contents
+    // Remove active classes from all tab contents
     const contents = document.querySelectorAll('.tab-content');
-
-    // Hide all tab contents
     contents.forEach(content => {
-        content.style.display = "none";
+        content.classList.remove('active');
     });
 
     // Display the selected tab content
-    document.getElementById(tabId).style.display = "block";
+    document.getElementById(tabId).classList.add('active');
 }
