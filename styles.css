@@ -48,7 +48,7 @@ nav a:hover {
     background-color: black;
 }
 
-.lab-title {
+#title {
     font-size: 3em;
     opacity: 0;
     animation: fadeIn 2s forwards;
