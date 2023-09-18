@@ -1,21 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('homeTab').addEventListener('click', function(event) {
-        event.preventDefault();
-        showTab('home');
-    });
-
-    document.getElementById('applicationsTab').addEventListener('click', function(event) {
-        event.preventDefault();
-        showTab('applications');
-    });
-});
-
 function showTab(tabId) {
+    // Get all tab contents
+    const contents = document.querySelectorAll('.tab-content');
+
     // Hide all tab contents
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.style.display = 'none';
+    contents.forEach(content => {
+        content.style.display = "none";
     });
-    
-    // Show the selected tab content
-    document.getElementById(tabId).style.display = 'block';
+
+    // Display the selected tab content
+    document.getElementById(tabId).style.display = "block";
 }
