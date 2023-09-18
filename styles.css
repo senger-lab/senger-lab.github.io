@@ -1,3 +1,4 @@
+/* Base styles */
 body, h1, h2, p, a {
     margin: 0;
     padding: 0;
@@ -5,30 +6,31 @@ body, h1, h2, p, a {
     color: white;
 }
 
+/* Navigation styles */
 nav {
     display: flex;
     justify-content: center;
     background-color: black;
-    padding: 20px 0; /* Increased padding to make tabs bigger */
+    padding: 20px 0;
 }
 
 nav a {
-    margin: 0 15px; 
+    margin: 0 15px;
     text-decoration: none;
-    color: white; 
-    font-size: 1.5em; 
-    padding: 10px 20px; 
-    border: 2px solid white; /* Added border */
-    border-radius: 5px; /* Optional: Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transition for hover effect */
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: white; /* White background on hover */
-    color: black; /* Text color changed to black on hover */
+    background-color: white;
+    color: black;
 }
 
-
+/* Tab Content */
 .tab-content {
     display: none;
     min-height: 100vh;
@@ -39,48 +41,49 @@ nav a:hover {
     display: block;
 }
 
-#home {
-    background: url('../home_background.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
 #applications {
     background-color: black;
 }
 
-#title {
-    font-size: 3em;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
+/* Home Section */
 #home {
     background: url('../home_background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* left-justified, but centered vertically */
+    align-items: flex-start;
+    height: 100vh;
+}
+
+#home h1, #home p.fade-in {
+    opacity: 0;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 #home h1 {
-    font-size: 5em; /* increased size for the title */
-    margin-bottom: 20px; /* spacing between title and paragraphs */
+    font-size: 5em;
+    margin-bottom: 20px;
     animation: fadeIn 2s forwards;
 }
 
-#home p {
-    font-size: 2em; /* increased size for the paragraphs */
-    margin-bottom: 10px; /* spacing between paragraphs */
+#home p.fade-in:first-of-type {
     animation: fadeIn 2s 1s forwards;
 }
 
+#home p.fade-in:last-of-type {
+    animation: fadeIn 2s 2s forwards;
+}
+
+/* Animations */
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
+/* Application Button */
 .app-button {
     display: inline-block;
     padding: 10px 15px;
