@@ -13,17 +13,21 @@ nav {
 }
 
 nav a {
-    margin: 0 30px; /* Increased margin between tabs */
+    margin: 0 15px; 
     text-decoration: none;
-    color: white; /* Made text color white */
-    font-size: 1.5em; /* Increased font size */
-    padding: 10px 20px; /* Added padding to make tabs bigger */
-    transition: background-color 0.3s ease; /* Transition for hover effect */
+    color: white; 
+    font-size: 1.5em; 
+    padding: 10px 20px; 
+    border: 2px solid white; /* Added border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition for hover effect */
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Added a subtle hover effect */
+    background-color: white; /* White background on hover */
+    color: black; /* Text color changed to black on hover */
 }
+
 
 .tab-content {
     display: none;

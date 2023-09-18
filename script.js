@@ -1,13 +1,13 @@
-document.querySelectorAll("nav a").forEach(tab => {
-    tab.addEventListener("click", event => {
-        event.preventDefault();
+function showTab(tabId) {
+    // Remove active classes
+    const activeTabContent = document.querySelector('.tab-content.active');
+    if (activeTabContent) {
+        activeTabContent.classList.remove('active');
+    }
 
-        // Remove active classes
-        document.querySelector("nav a.active").classList.remove("active");
-        document.querySelector(".tab-content.active").classList.remove("active");
-
-        // Add active class to clicked tab and corresponding content
-        event.target.classList.add("active");
-        document.querySelector(event.target.getAttribute("href")).classList.add("active");
-    });
-});
+    // Add active class to the selected tab content
+    const tabContent = document.getElementById(tabId);
+    if (tabContent) {
+        tabContent.classList.add('active');
+    }
+}
