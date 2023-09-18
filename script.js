@@ -1,10 +1,21 @@
-function showTab(tabId) {
-    // Remove active classes from all tab contents
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => {
-        content.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('homeTab').addEventListener('click', function(event) {
+        event.preventDefault();
+        showTab('home');
     });
 
-    // Display the selected tab content
-    document.getElementById(tabId).classList.add('active');
+    document.getElementById('applicationsTab').addEventListener('click', function(event) {
+        event.preventDefault();
+        showTab('applications');
+    });
+});
+
+function showTab(tabId) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    
+    // Show the selected tab content
+    document.getElementById(tabId).style.display = 'block';
 }
