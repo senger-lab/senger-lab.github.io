@@ -1,21 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('homeTab').addEventListener('click', function(event) {
-        event.preventDefault();
-        showTab('home');
+document.addEventListener("DOMContentLoaded", function() {
+    let homeContent = document.getElementById('home');
+    let applicationsContent = document.getElementById('applications');
+    let homeTab = document.getElementById('homeTab');
+    let applicationsTab = document.getElementById('applicationsTab');
+
+    // Set initial state
+    homeContent.style.display = "block";
+
+    homeTab.addEventListener('click', function() {
+        homeContent.style.display = "block";
+        applicationsContent.style.display = "none";
     });
 
-    document.getElementById('applicationsTab').addEventListener('click', function(event) {
-        event.preventDefault();
-        showTab('applications');
+    applicationsTab.addEventListener('click', function() {
+        homeContent.style.display = "none";
+        applicationsContent.style.display = "block";
     });
 });
-
-function showTab(tabId) {
-    // Hide all tab contents
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.style.display = 'none';
-    });
-    
-    // Show the selected tab content
-    document.getElementById(tabId).style.display = 'block';
-}

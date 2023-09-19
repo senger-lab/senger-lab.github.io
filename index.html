@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senger Lab</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <title>Senger Lab</title>
 </head>
-
 <body>
-    <nav>
-        <a href="#" onclick="showTab('home')">Home</a>
-        <a href="#" onclick="showTab('applications')">Applications</a>
-        <a href="#" onclick="showTab('contact')">Contact</a>
-    </nav>
+    <div class="navbar">
+        <a href="#home" class="nav-item" id="homeTab">Home</a>
+        <a href="#applications" class="nav-item" id="applicationsTab">Applications</a>
+    </div>
+    
     <div id="home" class="content">
-        <h1 id="title">SENGER LAB</h1>
-        <p class="fade-in">Lady Davis Institute for Medical Research at the Jewish General Hospital, McGill University</p>
-        <p class="fade-in">Arnie Charbonneau Cancer Institute, University of Calgary</p>
-                
+        <h1 class="fade-in" id="mainHeader">Senger Lab</h1>
+        <h2 class="fade-in" id="subHeader1">Lady Davis Institute for Medical Research at the Jewish General Hospital, McGill University</h2>
+        <h2 class="fade-in" id="subHeader2">Arnie Charbonneau Cancer Institute, University of Calgary</h2>
     </div>
+    
     <div id="applications" class="content">
-
-        <!-- First Paragraph -->
-        <div class="app-section">
-            <h2>TFRI GBM Data Viewer</h2>
-            <p>Data accessible from Shen et al., 2019</p>
-            <a href="https://example1.com" target="_blank" class="app-button">Visit Site</a>
-        </div>
-    
-        <!-- Second Paragraph -->
-        <div class="app-section">
-            <h2>SomaScan Data Viewer</h2>
-            <p>SomaScan profiling of TIF from U87 xenografts</p>
-            <a href="https://example2.com" target="_blank" class="app-button">Visit Site</a>
-        </div>
-        
-        <!-- ... Repeat for remaining paragraphs ... -->
-    
+        <!-- You can replicate the following pattern for each of your links -->
+        <h3 class="app-title">Application Name</h3>
+        <p class="app-description">This application does XYZ...</p>
+        <a href="LINK_TO_YOUR_APP" class="app-link">Open Application</a>
     </div>
-    
-    
+<script src="script.js"></script>
 </body>
-
 </html>
