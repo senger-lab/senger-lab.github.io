@@ -1,85 +1,84 @@
-body, h1, h2, p, a {
+.content {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    background-color: black;
-    padding: 20px 0;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: black;   /* This line makes the background black */
 }
 
 nav a {
-    margin: 0 15px; 
+    color: white;              /* This line makes the text color white */
     text-decoration: none;
-    color: white; 
-    font-size: 1.5em; 
-    padding: 10px 20px; 
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: white;
+    background-color: white;   /* Flip the colors on hover */
     color: black;
 }
 
-.tab-content {
-    display: none;
-    min-height: 100vh;
-    padding: 50px;
-}
-
-.tab-content.active {
-    display: block;
-}
-
 #home {
-    background: url('../home_background.jpg') no-repeat center center fixed;
+    background-image: url('../home_background.jpg'); /* Replace with your image path */
     background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;   /* Change this line */
     justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
+    padding-left: 20px;
+    padding-top: 100px;
+    color: white;
+    font-size: 2.5em;
 }
 
-#home h1 {
-    font-size: 5em;
-    margin-bottom: 20px;
-    animation: fadeIn 2s forwards;
-    opacity: 0;
-}
 
-#home p.fade-in:first-of-type,
-#home p.fade-in:last-of-type {
-    font-size: 2em;
-    margin-bottom: 10px;
-    animation: fadeIn 2s forwards;
+#title {
     opacity: 0;
+    animation: fadeIn 1s forwards 1s; /* Start after 1s, duration 1s */
 }
 
 #applications {
-    background-color: black;
+    background-color: #000;   /* Pure black background */
+    font-size: 16px;
+    color: white;
+}
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards 3s; /* Start after 3s, duration 1s */
+}
+
+
+.app-section {
+    margin-bottom: 20px; /* Provides spacing between each section */
 }
 
 .app-button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: gray;
-    color: white;
+    display: inline-block; 
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: 1px solid white;
+    color: white;
+    background-color: #000;
+    transition: background-color 0.3s;
 }
 
 .app-button:hover {
-    background-color: darkgray;
+    background-color: #555;
 }
+
 
 @keyframes fadeIn {
     to {
