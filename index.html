@@ -3,72 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Senger Lab</title>
-  <meta name="description" content="Interactive apps from the Senger Lab for exploring RNA-seq and proteomics data from glioma and sarcoma models.">
+  <title>Senger Lab | Lady Davis Institute</title>
+  <meta name="description" content="The Senger Lab at the Lady Davis Institute for Medical Research, Jewish General Hospital. Interactive apps for exploring RNA-seq and proteomics data from glioma and sarcoma models.">
   <meta name="theme-color" content="#000000">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Ccircle cx='24' cy='28' r='14' fill='%235b8cff'/%3E%3Ccircle cx='40' cy='36' r='12' fill='%2340e08a' fill-opacity='.85'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Ctext x='32' y='45' font-size='40' font-family='Georgia,serif' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="top">
-    <a class="wordmark" href="#top">Senger Lab</a>
     <nav aria-label="Main">
       <a href="#apps">Apps</a>
       <a href="#images">Images</a>
-      <a href="https://github.com/senger-lab" rel="noopener">GitHub</a>
+      <a href="https://github.com/senger-lab" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
   </header>
 
-  <main id="top">
+  <main>
 
     <!-- HERO -->
     <section class="hero">
-      <canvas id="field" aria-hidden="true"></canvas>
-      <div class="hero-text">
-        <h1>Gene expression, lit up.</h1>
-        <p class="lede">Interactive apps from the Senger Lab for exploring RNA-seq and proteomics data from glioma and sarcoma models. Pick an app, type in a gene, and see what it does.</p>
-        <a class="btn btn-solid" href="#apps">Browse the apps</a>
-      </div>
+      <h1>Senger Lab</h1>
+      <p class="affil">Lady Davis Institute for Medical Research<br>Jewish General Hospital</p>
+      <p class="lede">Interactive apps for exploring RNA-seq and proteomics data from glioma and sarcoma models.</p>
     </section>
 
     <!-- APPS -->
     <section id="apps" class="section">
-      <h2>Four apps, four channels</h2>
-      <p class="section-sub">Each app opens in its own tab.</p>
+      <h2>Apps</h2>
+      <p class="section-sub">Each app opens in a new tab.</p>
 
       <div class="cards">
 
-        <article class="card" style="--ch: var(--dapi)">
-          <span class="glow" aria-hidden="true"></span>
+        <article class="card">
           <h3>TFRI patient cohort</h3>
           <p>RNA-sequencing of patient tumors, brain tumor initiating cells (BTICs), and xenografts from the Terry Fox Research Institute cohort.</p>
-          <p class="source">Data from <a href="https://doi.org/10.1073/pnas.1813495116" rel="noopener">Shen et al., 2019</a></p>
-          <a class="btn" href="https://svmenon.shinyapps.io/Senger_TFRI_RNA_Application/" rel="noopener">Open TFRI app</a>
+          <p class="source">Data from <a href="https://doi.org/10.1073/pnas.1813495116" target="_blank" rel="noopener noreferrer">Shen et al., 2019</a></p>
+          <a class="btn" href="https://svmenon.shinyapps.io/Senger_TFRI_RNA_Application/" target="_blank" rel="noopener noreferrer">Open TFRI app</a>
         </article>
 
-        <article class="card" style="--ch: var(--fitc)">
-          <span class="glow" aria-hidden="true"></span>
+        <article class="card">
           <h3>Glioma cell lines</h3>
           <p>Bulk RNA-seq of glioma cell lines. Look up a gene and compare its expression across lines.</p>
-          <a class="btn" href="https://svmenon.shinyapps.io/Senger_Glioma_Cell_RNAseq_Application/" rel="noopener">Open cell line app</a>
+          <a class="btn" href="https://svmenon.shinyapps.io/Senger_Glioma_Cell_RNAseq_Application/" target="_blank" rel="noopener noreferrer">Open cell line app</a>
         </article>
 
-        <article class="card" style="--ch: var(--cy3)">
-          <span class="glow" aria-hidden="true"></span>
+        <article class="card">
           <h3>SomaScan profiling</h3>
           <p>SomaScan proteomic profiling of tumor interstitial fluid (TIF) from U87 xenografts.</p>
-          <a class="btn" href="https://svmenon.shinyapps.io/Senger_SomaScan_Application/" rel="noopener">Open SomaScan app</a>
+          <a class="btn" href="https://svmenon.shinyapps.io/Senger_SomaScan_Application/" target="_blank" rel="noopener noreferrer">Open SomaScan app</a>
         </article>
 
-        <article class="card" style="--ch: var(--cy5)">
-          <span class="glow" aria-hidden="true"></span>
+        <article class="card">
           <h3>ASPSCR1::TFE3 sarcoma</h3>
           <p>RNA-seq study of the ASPSCR1::TFE3 type 2 fusion, the oncogenic fusion behind alveolar soft part sarcoma.</p>
-          <a class="btn" href="https://svmenon.shinyapps.io/Senger_ASPS_RNAseq_Application/" rel="noopener">Open ASPS app</a>
+          <a class="btn" href="https://svmenon.shinyapps.io/Senger_ASPS_RNAseq_Application/" target="_blank" rel="noopener noreferrer">Open ASPS app</a>
         </article>
 
       </div>
@@ -76,7 +68,7 @@
 
     <!-- IMAGES -->
     <section id="images" class="section">
-      <h2>From the microscope</h2>
+      <h2>Imaging</h2>
       <p class="section-sub">Immunofluorescence from the lab.</p>
 
       <!--
@@ -89,15 +81,15 @@
       -->
       <div class="gallery">
         <figure class="fig fig-large">
-          <div class="ph ph-a"><span>Drop an IF image here</span></div>
+          <div class="ph"><span>IF image</span></div>
           <figcaption>Caption: tissue, markers, scale bar</figcaption>
         </figure>
         <figure class="fig">
-          <div class="ph ph-b"><span>Drop an IF image here</span></div>
+          <div class="ph"><span>IF image</span></div>
           <figcaption>Caption: tissue, markers, scale bar</figcaption>
         </figure>
         <figure class="fig">
-          <div class="ph ph-c"><span>Drop an IF image here</span></div>
+          <div class="ph"><span>IF image</span></div>
           <figcaption>Caption: tissue, markers, scale bar</figcaption>
         </figure>
       </div>
@@ -106,69 +98,11 @@
   </main>
 
   <footer class="foot">
-    <p>Senger Lab</p>
+    <p class="foot-name">Senger Lab</p>
+    <p>Lady Davis Institute for Medical Research, Jewish General Hospital</p>
     <p class="foot-note">Apps are hosted on shinyapps.io. TFRI data are from Shen et al., 2019.</p>
-    <!-- Add lab contact, institution, or funding acknowledgements here. -->
+    <!-- Add lab contact, address, or funding acknowledgements here. -->
   </footer>
 
-  <script>
-    // Drifting fluorescent "nuclei" behind the hero. Decorative only.
-    (function () {
-      var canvas = document.getElementById('field');
-      var ctx = canvas.getContext('2d');
-      var colors = [[91,140,255],[64,224,138],[255,61,154],[255,138,61]];
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var blobs = [], w = 0, h = 0, dpr = 1;
-
-      function resize() {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        w = canvas.clientWidth; h = canvas.clientHeight;
-        canvas.width = w * dpr; canvas.height = h * dpr;
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        var n = Math.max(14, Math.min(40, Math.round(w / 40)));
-        blobs = [];
-        for (var i = 0; i < n; i++) {
-          blobs.push({
-            x: Math.random() * w, y: Math.random() * h,
-            r: 22 + Math.random() * 58,
-            vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
-            c: colors[Math.floor(Math.random() * colors.length)],
-            a: 0.14 + Math.random() * 0.14
-          });
-        }
-        draw();
-      }
-
-      function draw() {
-        ctx.globalCompositeOperation = 'source-over';
-        ctx.clearRect(0, 0, w, h);
-        ctx.globalCompositeOperation = 'lighter';
-        for (var i = 0; i < blobs.length; i++) {
-          var b = blobs[i];
-          var g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
-          g.addColorStop(0, 'rgba(' + b.c.join(',') + ',' + (b.a * 1.8) + ')');
-          g.addColorStop(0.45, 'rgba(' + b.c.join(',') + ',' + b.a + ')');
-          g.addColorStop(1, 'rgba(' + b.c.join(',') + ',0)');
-          ctx.fillStyle = g;
-          ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 6.2832); ctx.fill();
-        }
-      }
-
-      function tick() {
-        for (var i = 0; i < blobs.length; i++) {
-          var b = blobs[i];
-          b.x += b.vx; b.y += b.vy;
-          if (b.x < -b.r) b.x = w + b.r; if (b.x > w + b.r) b.x = -b.r;
-          if (b.y < -b.r) b.y = h + b.r; if (b.y > h + b.r) b.y = -b.r;
-        }
-        draw();
-        requestAnimationFrame(tick);
-      }
-
-      window.addEventListener('resize', resize);
-      resize();
-      if (!reduce) requestAnimationFrame(tick);
-    })();
-  </script>
 </body>
 </html>
