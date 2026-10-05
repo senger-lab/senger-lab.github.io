@@ -1,102 +1,302 @@
-.content {
-    display: none;
+/* Senger Lab: black field, white text, colors borrowed from IF channels */
+
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: #b4b4b4;
+  --line: #2a2a2a;
+
+  /* Fluorescence channels */
+  --dapi: #5b8cff;
+  --fitc: #40e08a;
+  --cy3:  #ff3d9a;
+  --cy5:  #ff8a3d;
+
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    background-color: black;   /* This line makes the background black */
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
 }
 
-nav a {
-    color: white;              /* This line makes the text color white */
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-    font-size: 1.5em;
+/* ---------- Header ---------- */
+
+.top {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem clamp(1.25rem, 5vw, 4rem);
 }
 
-nav a:hover {
-    background-color: white;   /* Flip the colors on hover */
-    color: black;
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: -0.01em;
 }
 
-#home {
-    display: block;
-    background-image: url('../home_background.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;   /* Change this line */
-    justify-content: center;
-    padding: 20px;
-    color: white;
-    font-size: 2.5em;
+.top nav { display: flex; gap: 1.75rem; }
+
+.top nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.top nav a:hover { color: var(--text); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: min(88vh, 46rem);
+  display: flex;
+  align-items: flex-end;
+  padding: 7rem clamp(1.25rem, 5vw, 4rem) 4.5rem;
+  overflow: hidden;
 }
 
-
-#title {
-    opacity: 0;
-    animation: fadeIn 1s forwards 1s; /* Start after 1s, duration 1s */
+#field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
 
-
-html, body {
-    height: 100%;
+.hero-text {
+  position: relative;
+  max-width: 52rem;
 }
 
-#applications {
-    background-color: #000;   /* Pure black background */
-    font-size: 16px;
-    color: white;
-    min-height: 100%; /* This ensures the element spans the full height */
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3.25rem, 11vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.5rem;
 }
 
-
-footer {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid white;
-    font-size: 0.9em;  /* Slightly smaller font for footer */
-    opacity: 0.8;  /* Slightly translucent for a more subdued appearance */
+.lede {
+  max-width: 36rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: #e6e6e6;
+  margin: 0 0 2rem;
 }
 
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards 3s; /* Start after 3s, duration 1s */
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--text);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
+.btn:hover { background: var(--text); color: #000; }
 
-.app-section {
-    margin-bottom: 20px; /* Provides spacing between each section */
+.btn-solid { background: var(--text); color: #000; }
+.btn-solid:hover { background: transparent; color: var(--text); }
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 5rem clamp(1.25rem, 5vw, 4rem);
+  max-width: 82rem;
+  margin: 0 auto;
 }
 
-.app-button {
-    display: inline-block; 
-    padding: 10px 20px;
-    text-decoration: none;
-    border: 1px solid white;
-    color: white;
-    background-color: #000;
-    transition: background-color 0.3s;
+h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5rem;
 }
 
-.app-button:hover {
-    background-color: #555;
+.section-sub {
+  color: var(--muted);
+  margin: 0 0 2.5rem;
 }
 
+/* ---------- App cards ---------- */
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #000;
+  transition: border-color 0.2s;
+}
+
+/* Soft channel-colored glow, like a stained nucleus */
+.card .glow {
+  position: absolute;
+  z-index: -1;
+  top: -4.5rem;
+  right: -4.5rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--ch) 0%, transparent 68%);
+  opacity: 0.45;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.card:hover { border-color: var(--ch); }
+.card:hover .glow { opacity: 0.8; transform: scale(1.12); }
+
+.card h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  max-width: 80%;
+}
+
+.card p { margin: 0 0 1rem; max-width: 34rem; color: #e6e6e6; }
+
+.card .source { font-size: 0.95rem; color: var(--muted); }
+.card .source a { color: var(--text); text-underline-offset: 3px; position: relative; z-index: 2; }
+
+.card .btn {
+  margin-top: auto;
+  border-color: var(--ch);
+}
+.card:hover .btn { background: var(--ch); color: #000; }
+
+/* Whole card is clickable through the button link */
+.card .btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ---------- Image gallery ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+}
+
+.fig { margin: 0; }
+.fig-large { grid-row: span 2; }
+
+.fig img,
+.ph {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.fig-large img,
+.fig-large .ph { aspect-ratio: auto; height: calc(100% - 2.25rem); min-height: 20rem; }
+
+figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Placeholder: a dark frame with a hint of stain. Replace with <img>. */
+.ph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #444;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.ph-a { background:
+  radial-gradient(circle at 25% 35%, rgba(91,140,255,.35), transparent 22%),
+  radial-gradient(circle at 60% 55%, rgba(64,224,138,.28), transparent 26%),
+  radial-gradient(circle at 78% 25%, rgba(255,61,154,.25), transparent 20%),
+  #000; }
+
+.ph-b { background:
+  radial-gradient(circle at 35% 60%, rgba(255,138,61,.3), transparent 26%),
+  radial-gradient(circle at 70% 35%, rgba(91,140,255,.3), transparent 24%),
+  #000; }
+
+.ph-c { background:
+  radial-gradient(circle at 50% 45%, rgba(64,224,138,.3), transparent 28%),
+  radial-gradient(circle at 25% 75%, rgba(255,61,154,.25), transparent 22%),
+  #000; }
+
+/* ---------- Footer ---------- */
+
+.foot {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 3rem;
+  max-width: 82rem;
+  margin: 2rem auto 0;
+}
+
+.foot p { margin: 0; font-family: var(--display); font-weight: 800; font-size: 1.1rem; }
+.foot .foot-note { margin-top: 0.4rem; font-family: var(--body); font-weight: 400; font-size: 0.95rem; color: var(--muted); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 760px) {
+  .cards { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .fig-large { grid-row: auto; }
+  .fig-large img, .fig-large .ph { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
+  .top nav { gap: 1.1rem; }
+  .card h3 { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
 }
