@@ -1,18 +1,12 @@
-/* Senger Lab: black field, white text, colors borrowed from IF channels */
+/* Senger Lab: black, white, and grey. */
 
 :root {
   --bg: #000;
   --text: #fff;
-  --muted: #b4b4b4;
-  --line: #2a2a2a;
+  --muted: #a8a8a8;
+  --line: #333;
 
-  /* Fluorescence channels */
-  --dapi: #5b8cff;
-  --fitc: #40e08a;
-  --cy3:  #ff3d9a;
-  --cy5:  #ff8a3d;
-
-  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
   --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -40,21 +34,9 @@ a { color: inherit; }
 /* ---------- Header ---------- */
 
 .top {
-  position: absolute;
-  inset: 0 0 auto 0;
-  z-index: 5;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
   padding: 1.5rem clamp(1.25rem, 5vw, 4rem);
-}
-
-.wordmark {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
 .top nav { display: flex; gap: 1.75rem; }
@@ -70,62 +52,33 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 
 .hero {
-  position: relative;
-  min-height: min(88vh, 46rem);
-  display: flex;
-  align-items: flex-end;
-  padding: 7rem clamp(1.25rem, 5vw, 4rem) 4.5rem;
-  overflow: hidden;
-}
-
-#field {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-}
-
-.hero-text {
-  position: relative;
-  max-width: 52rem;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem);
+  border-bottom: 1px solid var(--line);
 }
 
 h1 {
   font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(3.25rem, 11vw, 8.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  margin: 0 0 1.5rem;
-}
-
-.lede {
-  max-width: 36rem;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: #e6e6e6;
+  font-weight: 400;
+  font-size: clamp(4rem, 15vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
   margin: 0 0 2rem;
 }
 
-/* ---------- Buttons ---------- */
-
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1.4rem;
-  border: 2px solid var(--text);
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
-  background: transparent;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+.affil {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 500;
+  margin: 0 0 1.25rem;
 }
 
-.btn:hover { background: var(--text); color: #000; }
-
-.btn-solid { background: var(--text); color: #000; }
-.btn-solid:hover { background: transparent; color: var(--text); }
+.lede {
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin: 0;
+}
 
 /* ---------- Sections ---------- */
 
@@ -137,10 +90,10 @@ h1 {
 
 h2 {
   font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   margin: 0 0 0.5rem;
 }
 
@@ -159,55 +112,51 @@ h2 {
 
 .card {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
   border: 1px solid var(--line);
-  border-radius: 24px;
-  background: #000;
+  border-radius: 4px;
   transition: border-color 0.2s;
 }
 
-/* Soft channel-colored glow, like a stained nucleus */
-.card .glow {
-  position: absolute;
-  z-index: -1;
-  top: -4.5rem;
-  right: -4.5rem;
-  width: 15rem;
-  height: 15rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--ch) 0%, transparent 68%);
-  opacity: 0.45;
-  transition: opacity 0.25s, transform 0.25s;
-}
-
-.card:hover { border-color: var(--ch); }
-.card:hover .glow { opacity: 0.8; transform: scale(1.12); }
+.card:hover { border-color: var(--text); }
 
 .card h3 {
   font-family: var(--display);
-  font-weight: 800;
+  font-weight: 500;
   font-size: 1.75rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   margin: 0 0 0.75rem;
-  max-width: 80%;
 }
 
-.card p { margin: 0 0 1rem; max-width: 34rem; color: #e6e6e6; }
+.card p { margin: 0 0 1rem; max-width: 34rem; color: #e2e2e2; }
 
 .card .source { font-size: 0.95rem; color: var(--muted); }
-.card .source a { color: var(--text); text-underline-offset: 3px; position: relative; z-index: 2; }
-
-.card .btn {
-  margin-top: auto;
-  border-color: var(--ch);
+.card .source a {
+  color: var(--text);
+  text-underline-offset: 3px;
+  position: relative;
+  z-index: 2;
 }
-.card:hover .btn { background: var(--ch); color: #000; }
+
+.btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.65rem 1.3rem;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.card:hover .btn,
+.btn:hover { background: var(--text); color: #000; }
 
 /* Whole card is clickable through the button link */
 .card .btn::after {
@@ -235,7 +184,7 @@ h2 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 4px;
 }
 
 .fig-large img,
@@ -247,31 +196,14 @@ figcaption {
   color: var(--muted);
 }
 
-/* Placeholder: a dark frame with a hint of stain. Replace with <img>. */
+/* Placeholder frame. Replace with an <img>. */
 .ph {
-  position: relative;
   display: grid;
   place-items: center;
-  border: 1px dashed #444;
+  border: 1px dashed #4a4a4a;
   color: var(--muted);
   font-size: 0.95rem;
 }
-
-.ph-a { background:
-  radial-gradient(circle at 25% 35%, rgba(91,140,255,.35), transparent 22%),
-  radial-gradient(circle at 60% 55%, rgba(64,224,138,.28), transparent 26%),
-  radial-gradient(circle at 78% 25%, rgba(255,61,154,.25), transparent 20%),
-  #000; }
-
-.ph-b { background:
-  radial-gradient(circle at 35% 60%, rgba(255,138,61,.3), transparent 26%),
-  radial-gradient(circle at 70% 35%, rgba(91,140,255,.3), transparent 24%),
-  #000; }
-
-.ph-c { background:
-  radial-gradient(circle at 50% 45%, rgba(64,224,138,.3), transparent 28%),
-  radial-gradient(circle at 25% 75%, rgba(255,61,154,.25), transparent 22%),
-  #000; }
 
 /* ---------- Footer ---------- */
 
@@ -282,8 +214,9 @@ figcaption {
   margin: 2rem auto 0;
 }
 
-.foot p { margin: 0; font-family: var(--display); font-weight: 800; font-size: 1.1rem; }
-.foot .foot-note { margin-top: 0.4rem; font-family: var(--body); font-weight: 400; font-size: 0.95rem; color: var(--muted); }
+.foot p { margin: 0 0 0.25rem; }
+.foot .foot-name { font-family: var(--display); font-size: 1.4rem; }
+.foot .foot-note { margin-top: 0.75rem; font-size: 0.95rem; color: var(--muted); }
 
 /* ---------- Small screens ---------- */
 
@@ -292,8 +225,6 @@ figcaption {
   .gallery { grid-template-columns: 1fr; }
   .fig-large { grid-row: auto; }
   .fig-large img, .fig-large .ph { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
-  .top nav { gap: 1.1rem; }
-  .card h3 { max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
